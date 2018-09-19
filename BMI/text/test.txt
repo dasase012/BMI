@@ -1,0 +1,4 @@
+mode	x.hand	y.hand	x.dot	y.dot
+1	4	5	2	2
+
+//전체좌표를 Max(10,10)으로 설정	
