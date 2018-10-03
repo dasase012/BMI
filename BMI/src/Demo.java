@@ -18,7 +18,9 @@ public class Demo extends JPanel implements ActionListener, KeyListener{
    BufferedImage image;
    Ellipse2D.Double circle, circle2, circle3, circle4;
    Rectangle rect;
-   Dimension size = new Dimension();
+   Dimension size = new Dimension();			
+   /*Rectangle, Dimension이 갖고 있는 함수로 좌표 (10,10)으로 한정 짓거나 
+   x,y 좌표대로 이미지나 점이 움직이도록 설정 가능할 듯.*/
    
    Timer t = new Timer(5, this);
    int x=400, y=250, 
@@ -45,10 +47,15 @@ public class Demo extends JPanel implements ActionListener, KeyListener{
       initCircle();
    
       // Draw image centered.
-        //rect.x = (size.width - rect.width)/2;
-      //rect.y = (size.height - rect.height)/2;
+      /*rect.x = (size.width - rect.width)/2;
+      rect.y = (size.height - rect.height)/2;*/
+      
+      /*rect.x=(int) (rect.getWidth()/2);
+      rect.y=(int) (rect.getHeight()/2);*/
       rect.x = x;
       rect.y = y;
+      
+      
       
       g2.drawImage(image, rect.x, rect.y, this);
       g2.setPaint(Color.RED);
