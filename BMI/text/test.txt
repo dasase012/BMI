@@ -1,4 +1,5 @@
-mode	x.hand	y.hand	x.dot	y.dot
+mode	x.hand	y.hand	x.circle	y.circle
 1	4	5	2	2
 
 //전체좌표를 Max(10,10)으로 설정	
+//파일을 읽어옵시다.

@@ -1,11 +1,20 @@
 package practice;
 
-public class Connect {
+import java.io.*; 
+//Java Program to illustrate reading from FileReader 
+//using BufferedReader 
+import java.util.StringTokenizer;
 
-	/*
-	 깃허브 
-	 javaLab2/API-ArrayList/src/com/sist/data/DataManager_valueOf문자열화시켜줌.java
-	 참고해서 텍스트 파일 파싱.
-	 혹은 JSOUP 으로 텍스트 파싱.
-	 */
-}
+public class Connect 
+{ 
+public static void main(String[] args)throws Exception 
+{ 
+File file = new File("C:\\Users\\SNU1\\git\\BMI\\BMI\\text\\test.txt"); 
+
+BufferedReader br = new BufferedReader(new FileReader(file)); 
+StringTokenizer tokenizer;
+String st; 
+while ((st = br.readLine()) != null) 
+ System.out.println(st); 
+} 
+} 

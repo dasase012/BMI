@@ -61,9 +61,9 @@ public class Demo extends JPanel implements ActionListener, KeyListener{
       g2.setPaint(Color.RED);
 
       g2.fill(circle);
-      g2.fill(circle2);
+     /* g2.fill(circle2);
       g2.fill(circle3);
-      g2.fill(circle4);
+      g2.fill(circle4);*/
       
    }
 
@@ -72,9 +72,9 @@ public class Demo extends JPanel implements ActionListener, KeyListener{
                
       /*Edge dots(x,y,40,40)=>dot position and size*/            
       circle = new Ellipse2D.Double(x0,y0,40,40);
-      circle2 = new Ellipse2D.Double(x0,y2,40,40);
+      /*circle2 = new Ellipse2D.Double(x0,y2,40,40);
       circle3 = new Ellipse2D.Double(x2,y0,40,40);
-      circle4 = new Ellipse2D.Double(x2,y2,40,40);
+      circle4 = new Ellipse2D.Double(x2,y2,40,40);*/
       
    }
 
@@ -131,6 +131,16 @@ public class Demo extends JPanel implements ActionListener, KeyListener{
        frame.setSize(1000, 1000);
        frame.setLocation(500, 50);
        frame.setVisible(true);
+       
+       //read text file
+       File file = new File("C:\\Users\\SNU1\\git\\BMI\\BMI\\text\\test.txt"); 
+
+       BufferedReader br = new BufferedReader(new FileReader(file)); 
+
+       String st; 
+       while ((st = br.readLine()) != null) 
+        System.out.println(st); 
+        
     
   }
    
