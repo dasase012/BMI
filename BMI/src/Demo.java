@@ -7,6 +7,7 @@ import java.awt.image.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.*;
 import javax.imageio.ImageIO;
@@ -25,32 +26,31 @@ public class Demo extends JPanel {
       this.image = image;
         rect = new Rectangle(image.getWidth(), image.getHeight());
         
-      //t.start();
-      //addKeyListener(this);
+  
       setFocusable(true);
       setFocusTraversalKeysEnabled(false);
 	  
       
    }
    public static void getFileVariables (int x, int y,int cx,int cy) {
-		 handX =  integers.get(x);
+		 
+	     handX =  integers.get(x);
 		 handY = integers.get(y);
 		 circleX =  integers.get(cx);
 		 circleY= integers.get(cy);
-	     System.out.println(x+"///"+y+"///"+cx+"///"+cy);
+		 System.out.println(handX);
 	   }
    
    protected void paintComponent(Graphics g) {
       super.paintComponent(g);
-   //   Demo d = new Demo(image);
+
       /*draw circles*/
       Graphics2D g2 = (Graphics2D)g;
       
       initCircle();
  
-     // rect.x = integers.get(1)*100;
+
       System.out.println(this.handX+"\n");
-     rect.y = handY*100;
        
       g2.drawImage(image,  this.handX*100, this.handY*100, this);
       g2.setPaint(Color.RED);
@@ -70,39 +70,21 @@ public class Demo extends JPanel {
    public static void main(String[] arguments) throws IOException {
 
 	   //read text file
-		   try {
 		
-			   File file = new File("C:\\Users\\SNU1\\git\\BMI\\BMI\\text\\test.txt");
-			   String[] splitedStr = null;
-			   FileReader filereader = new FileReader(file);
-			   BufferedReader bf = new BufferedReader(filereader);
-			   String line = "";
-			   splitedStr = null;
-			   
-			   long length = 0;
-			   while((line=bf.readLine())!=null){
-				   if(line.isEmpty()) {
-					   break;
-				   }
-				   splitedStr = line.split(" ");
-				   
-				   for(int i=1;i<splitedStr.length;i++) {
-					   splitedStr[i]=splitedStr[i].trim();
-					   System.out.println(splitedStr[i]);
-					   integers.add(i);
-				   }
+			   File file = new File("C:\\Users\\SNU1\\git\\BMI\\BMI\\text\\test.txt"); 
+			   Scanner scanner = new Scanner(file);
+			   while (scanner.hasNext()) {
+			       if (scanner.hasNextInt()) {
+			           integers.add(scanner.nextInt());
+			       } 
+			       else {
+			           scanner.next();
+			       }
 			   }
-			   bf.close();
-			} catch (FileNotFoundException e) {
-					e.printStackTrace();
-			}
-
-		  
-		 getFileVariables(integers.get(6),integers.get(7),integers.get(8),integers.get(9));
-	      
-		  
+			   System.out.println(integers);
+			   
+		  getFileVariables(1,2,3,4);		  
 		  System.out.println(handX +" ?????"+handY+" ?????"+circleX +" ?????"+circleY);
-		  System.out.println(integers.get(6)+" " +integers.get(7)+" "+integers.get(8)+" "+integers.get(9));
 	   
 	      //insert image
 	       BufferedImage image = ImageIO.read(new File("image/point.png"));
