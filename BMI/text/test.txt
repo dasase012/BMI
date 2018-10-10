@@ -1,2 +1,2 @@
 mode	handX	handY	circleX	circleY score
-0 8 7 6 4 50
+0 5 1 4 6 80

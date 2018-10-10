@@ -1,4 +1,4 @@
-package javaapplication30;
+package gameExamples;
 
 import java.applet.*;
 import java.awt.*;
@@ -9,7 +9,7 @@ import java.net.*;
 
 class Ex5 extends JFrame{
     Ex5(){
-        this.setTitle("사격 게임");
+        this.setTitle("ChickenRun");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         GamePanel p = new GamePanel();
@@ -187,7 +187,7 @@ class GamePanel extends JPanel{
         }
     }
 }
-public class JavaApplication30 {
+public class RunChickenRun {
     public static void main(String[] args) {
         new Ex5();
     }
